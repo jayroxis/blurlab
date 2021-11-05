@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 from PIL import Image
-from scipy.signal import convolve2d
 from skimage.draw import disk
 
 import cv2
