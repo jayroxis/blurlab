@@ -2,7 +2,7 @@
 import numpy as np
 import pickle
 from PIL import Image
-from scipy.signal import convolve2d
+import cv2
 import os.path
 
 pickledPsfFilename =os.path.join(os.path.dirname( __file__),"psf.pkl")
