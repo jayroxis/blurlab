@@ -1,6 +1,7 @@
 import numpy as np
 from PIL import Image
 from scipy.signal import convolve2d
+import cv2
 
 boxKernelDims = [3,5,7,9]
 
@@ -12,8 +13,10 @@ def BoxBlur_random(img):
 def BoxBlur(img, dim):
     imgarray = np.array(img, dtype="float32")
     kernel = BoxKernel(dim)
-    convolved = convolve2d(imgarray, kernel, mode='same', fillvalue=255.0).astype("uint8")
+    # convolved = convolve2d(imgarray, kernel, mode='same', fillvalue=255.0).astype("uint8")
+    convolved = cv2.filter2D(imgarray, -1, kernel).astype("uint8")
     img = Image.fromarray(convolved)
+
     return img
 
 def BoxKernel(dim):

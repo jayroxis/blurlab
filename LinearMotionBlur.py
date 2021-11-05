@@ -2,10 +2,10 @@
 import math
 import numpy as np
 from PIL import Image
-from scipy.signal import convolve2d
 from skimage.draw import line
 
 from .LineDictionary import LineDictionary
+import cv2
 
 lineLengths =[3,5,7,9]
 lineTypes = ["full", "right", "left"]
@@ -23,7 +23,7 @@ def LinearMotionBlur_random(img):
 def LinearMotionBlur(img, dim, angle, linetype):
     imgarray = np.array(img, dtype="float32")
     kernel = LineKernel(dim, angle, linetype)
-    convolved = convolve2d(imgarray, kernel, mode='same', fillvalue=255.0).astype("uint8")
+    convolved = cv2.filter2D(imgarray, -1, kernel).astype("uint8")
     img = Image.fromarray(convolved)
     return img
 

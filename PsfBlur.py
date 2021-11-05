@@ -14,7 +14,7 @@ with open(pickledPsfFilename, 'rb') as pklfile:
 def PsfBlur(img, psfid):
     imgarray = np.array(img, dtype="float32")
     kernel = psfDictionary[psfid]
-    convolved = convolve2d(imgarray, kernel, mode='same', fillvalue=255.0).astype("uint8")
+    convolved = cv2.filter2D(imgarray, -1, kernel).astype("uint8")
     img = Image.fromarray(convolved)
     return img
     
