@@ -1,0 +1,9 @@
+include *.md
+
+include LICENSE.txt
+
+include setup.py
+
+include *.pkl
+
+recursive-include data *
