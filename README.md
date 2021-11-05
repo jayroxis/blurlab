@@ -18,7 +18,7 @@ pypi: [https://pypi.python.org/pypi?:action=display&name=pyblur&version=0.2.3](h
 
 
 ## Installation
-From Pip: `pip install pyblur`<br>
+From Pip: `pip install blurlab`<br>
 Or alternatively `git clone` this repo and run locally
 
 ## Usage
