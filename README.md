@@ -1,4 +1,4 @@
-# Pyblur
+# Pyblur (Renamed as `blurlab`)
 
 *IMPORTANT: The package now is renamed as `blurlab`.*
 
