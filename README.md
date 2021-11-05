@@ -1,4 +1,4 @@
-#Pyblur
+# Pyblur
 
 *IMPORTANT: The package now is renamed as `blurlab`.*
 
@@ -17,14 +17,14 @@ pypi: [https://pypi.python.org/pypi?:action=display&name=pyblur&version=0.2.3](h
 
 
 
-##Installation
+## Installation
 From Pip: `pip install pyblur`<br>
 Or alternatively `git clone` this repo and run locally
 
-##Usage
+## Usage
     from pyblur import *
 
-###Gaussian Blur
+### Gaussian Blur
 Blurs image using a Gaussian Kernel
     
     blurred = GaussianBlur(img, bandwidth)
@@ -33,7 +33,7 @@ Randomized kernel bandwidth (between 0.5 and 3.5)
 
     blurred = GaussianBlur_random(img)
 
-###Defocus (Disk) Blur
+### Defocus (Disk) Blur
 Blurs image using a Disk Kernel
 
 	blurred = DefocusBlur(img, kernelsize)
@@ -43,7 +43,7 @@ Randomized kernel size (between 3 and 9)
 	blurred = DefocusBlur_random(img)
 
 
-###Box Blur
+### Box Blur
 Blurs image using a Box Kernel
 
 	blurred = BoxBlur(img, kernelsize)
@@ -53,12 +53,12 @@ Randomized kernel size (between 3 and 9)
 	blurred = BoxBlur_random(img)
 
 
-###Linear Motion Blur
+### Linear Motion Blur
 Blurs image using a Line Kernel
 
 	blurred = LinearMotionBlur(img, dim, angle, linetype)
 
-####Parameters
+#### Parameters
 * `dim` Kernel Size: {3,5,7,9} <br>
 * `angle` Angle of the line of motion. Will be floored to the closest one available for the given kernel size. <br>
 * `linetype = {left, right, full}` Controls whether the blur kernel will be applied in full or only the left/right halves of it. <br>
@@ -73,7 +73,7 @@ Blurs image using one of the Point Spread Functions (Kernels) used in:<br>
 
 	blurred = PsfBlur(img, psfid)
 
-####Parameters
+#### Parameters
 * `psfid` Id of the Point Spread Function to apply [0, 99] <br>
 
 
@@ -82,7 +82,7 @@ Randomized kernel size, angle, and line type
 	blurred = PsfBlur_random(img)
 
 
-###Random Blur
+### Random Blur
 Randomly applies one of the supported blur types, with a randomized bandwidth/strenght.
 
 	blurred = RandomizedBlur(img)
